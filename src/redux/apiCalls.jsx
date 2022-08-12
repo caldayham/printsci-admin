@@ -1,4 +1,4 @@
-import { publicRequest, userRequest } from "../tools/requestMethods";
+import { publicRequest } from "../tools/requestMethods";
 import {
   getProductFailure,
   getProductStart,
