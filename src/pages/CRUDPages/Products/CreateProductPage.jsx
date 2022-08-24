@@ -6,7 +6,7 @@ import {
   MainTitle,
   SubTitle,
 } from "../../../tools/globalStyles";
-import { InputDiv } from "./styles";
+import { DataInput, InputDiv } from "./styles";
 
 const CreateProductPage = () => {
   return (
@@ -26,58 +26,59 @@ const CreateProductPage = () => {
           >
             <InputDiv>
               <label>Part title: </label>
-              <input type="text" placeholder="part title" />
+              <DataInput type="text" placeholder="part title" />
             </InputDiv>
 
             <InputDiv>
               <label>Part id: </label>
-              <input type="text" placeholder="part id" />
+              <DataInput type="text" placeholder="part id" />
             </InputDiv>
             <InputDiv>
               <label>Rating:</label>
-              <input type="number" placeholder="Average Rating" />
-              <input type="number" placeholder="Number of Ratings" />
-              <input type="number" placeholder="Answered Questions" />
+              <DataInput type="number" placeholder="Average Rating" />
+              <DataInput type="number" placeholder="Number of Ratings" />
+              <DataInput type="number" placeholder="Answered Questions" />
             </InputDiv>
             <InputDiv>
               <label>Description: </label>
-              <input type="text" placeholder="summary description" />
+              <DataInput type="text" placeholder="summary description" />
             </InputDiv>
             <InputDiv>
               <label>Images: </label>
-              <input type="file" id="file" />
+              <DataInput type="file" id="file" />
             </InputDiv>
             <InputDiv>
               <label>Categories: </label>
-              <input
+              <DataInput
                 type="text"
                 placeholder="Categories, put spaces between entries."
               />
             </InputDiv>
             <InputDiv>
               <label>Family: </label>
-              <input type="text" placeholder="product family" />
+              <DataInput type="text" placeholder="product family" />
             </InputDiv>
             <InputDiv>
               <label>Options: </label>
-              <input type="text" placeholder="Option" />
+              <DataInput type="text" placeholder="Option" />
             </InputDiv>
             <InputDiv>
               <label>Base Price: </label>
-              <input type="text" placeholder="base price" />
+              <DataInput type="text" placeholder="base price" />
             </InputDiv>
             <InputDiv>
               <label>Features: </label>
-              <input type="text" placeholder="product features" />
+              <DataInput type="text" placeholder="product features" />
             </InputDiv>
             <InputDiv>
               <label>Specifications: </label>
-              <input type="text" placeholder="product specifications" />
+              <DataInput type="text" placeholder="product specifications" />
             </InputDiv>
             <InputDiv>
               <label>In Stock: </label>
-              <input type="text" placeholder="true / false" />
+              <DataInput type="text" placeholder="true / false" />
             </InputDiv>
+            <div style={{height: "60px"}}/>
           </form>
           <div
             style={{
@@ -87,7 +88,7 @@ const CreateProductPage = () => {
               width: "calc(100% - 40px)",
             }}
           >
-            <button style={{ width: "100%" }}>Create</button>
+            <button style={{ width: "100%", padding: "10px" }}>Create</button>
           </div>
         </ComponentContainer>
       </ContentContainer>

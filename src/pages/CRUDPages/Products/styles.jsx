@@ -5,4 +5,10 @@ const InputDiv = styled.div`
   flex-direction: column;
 `;
 
-export { InputDiv };
+const DataInput = styled.input`
+padding: 10px;
+margin-bottom: 5px;
+width: 50%;
+`;
+
+export { InputDiv, DataInput };
