@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   ComponentContainer,
   ContentContainer,
@@ -9,6 +9,11 @@ import {
 import { DataInput, InputDiv } from "./styles";
 
 const CreateProductPage = () => {
+
+  const [inputs, setInputs] = useState({});
+  const [file, setFile] = useState(null);
+  const [cat, setCat] = useState([]);
+
   return (
     <MainContainer>
       <MainTitle>Create a Product</MainTitle>
