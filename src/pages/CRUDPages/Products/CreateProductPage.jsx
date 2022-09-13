@@ -14,6 +14,19 @@ const CreateProductPage = () => {
   const [file, setFile] = useState(null);
   const [cat, setCat] = useState([]);
 
+  const handleChange = (e) => {
+    setInputs(prev=> {
+      return {...prev, [e.target.name]:e.target.value}
+    })
+  }
+  const handleCat = (e) => {
+    setCat(e.target.value.split(" "));
+  }
+
+  const handleClick = (e)=> {
+
+  }
+
   return (
     <MainContainer>
       <MainTitle>Create a Product</MainTitle>
@@ -24,64 +37,66 @@ const CreateProductPage = () => {
             flexDirection: "column",
             position: "relative",
           }}
-        >
+        > 
           <SubTitle>Please fill out the following information:</SubTitle>
           <form
             style={{ display: "flex", flexDirection: "column", gap: "20px" }}
           >
             <InputDiv>
-              <label>Part title: </label>
-              <DataInput type="text" placeholder="part title" />
+              <label>Product title: </label>
+              <DataInput type="text" placeholder="part title" onChange={handleChange} name="title"/>
             </InputDiv>
 
             <InputDiv>
-              <label>Part id: </label>
-              <DataInput type="text" placeholder="part id" />
+              <label>Product id: </label>
+              <DataInput type="text" placeholder="part id" onChange={handleChange} name="partId"/>
             </InputDiv>
             <InputDiv>
               <label>Rating:</label>
-              <DataInput type="number" placeholder="Average Rating" />
-              <DataInput type="number" placeholder="Number of Ratings" />
-              <DataInput type="number" placeholder="Answered Questions" />
+              <DataInput type="number" placeholder="Average Rating" onChange={handleChange} name="totalAvgRating"/>
+              <DataInput type="number" placeholder="Number of Ratings" onChange={handleChange} name="totalNumRatings"/>
+              <DataInput type="number" placeholder="Answered Questions" onChange={handleChange} name="totalAnsweredQuestions"/>
             </InputDiv>
             <InputDiv>
               <label>Description: </label>
-              <DataInput type="text" placeholder="summary description" />
+              <DataInput type="text" placeholder="summary description" onChange={handleChange} name="desc"/>
             </InputDiv>
             <InputDiv>
               <label>Images: </label>
-              <DataInput type="file" id="file" />
+              <DataInput type="file" id="file" onChange={e=>setFile(e.target.files)[0]} name="imgs"/>
             </InputDiv>
             <InputDiv>
               <label>Categories: </label>
               <DataInput
                 type="text"
                 placeholder="Categories, put spaces between entries."
+                onChange={handleCat}
+                name="categories"
               />
             </InputDiv>
             <InputDiv>
               <label>Family: </label>
-              <DataInput type="text" placeholder="product family" />
+              <DataInput type="text" placeholder="product family" onChange={handleChange} name="family"/>
             </InputDiv>
             <InputDiv>
               <label>Options: </label>
-              <DataInput type="text" placeholder="Option" />
+              <DataInput type="text" placeholder="Option" onChange={handleChange} name="options"/>
             </InputDiv>
             <InputDiv>
               <label>Base Price: </label>
-              <DataInput type="text" placeholder="base price" />
+              <DataInput type="number" placeholder="base price" onChange={handleChange} name="basePrice"/>
             </InputDiv>
             <InputDiv>
               <label>Features: </label>
-              <DataInput type="text" placeholder="product features" />
+              <DataInput type="text" placeholder="product features" onChange={handleChange} name="features"/>
             </InputDiv>
             <InputDiv>
               <label>Specifications: </label>
-              <DataInput type="text" placeholder="product specifications" />
+              <DataInput type="text" placeholder="product specifications" onChange={handleChange} name="specs"/>
             </InputDiv>
             <InputDiv>
               <label>In Stock: </label>
-              <DataInput type="text" placeholder="true / false" />
+              <DataInput type="text" placeholder="true / false" onChange={handleChange} name="inStock"/>
             </InputDiv>
             <div style={{height: "60px"}}/>
           </form>
@@ -93,7 +108,7 @@ const CreateProductPage = () => {
               width: "calc(100% - 40px)",
             }}
           >
-            <button style={{ width: "100%", padding: "10px" }}>Create</button>
+            <button style={{ width: "100%", padding: "10px" }} onClick={handleClick}>Create</button>
           </div>
         </ComponentContainer>
       </ContentContainer>
